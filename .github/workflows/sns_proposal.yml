@@ -51,6 +51,7 @@ jobs:
         run: |
             cd provision_canister
             echo "TARGET_CANISTER_ID=$(dfx canister id provision_canister_backend)" >> $GITHUB_ENV
+            echo "target canister id: ${{ env.TARGET_CANISTER_ID }}"
             export $WASM_PATH=".dfx/local/canisters/provision_canister_backend/provision_canister_backend.wasm"  
             quill sns make-upgrade-canister-proposal --target-canister-id "${{ env.TARGET_CANISTER_ID }}" --wasm-path $WASM_PATH ${{secrets.PROPOSER_NEURON_ID}} > message.json  
             quill send message.json

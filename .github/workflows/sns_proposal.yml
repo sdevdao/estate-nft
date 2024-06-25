@@ -22,14 +22,10 @@ jobs:
 
       - name: Import DFX identity
         run: |
-            dfx identity new my_new_identity
-            dfx identity use my_new_identity
-            dfx identity whoami
-
-        #   touch actions_identity.pem
-        #   echo "${{ secrets. }}" > actions_identity.pem
-        #   dfx identity import --storage-mode=plaintext actions actions_identity.pem
-        #   dfx identity use actions
+          touch actions_identity.pem
+          echo "${{ secrets.TEST_IDENTITY_PRIVATE_KEY }}" > actions_identity.pem
+          dfx identity import --storage-mode=plaintext actions actions_identity.pem
+          dfx identity use actions
 
 
       - name: Build

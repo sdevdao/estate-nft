@@ -32,6 +32,7 @@ jobs:
       - name: Build
         run: |
             cd provision_canister
+            rustup target add wasm32-unknown-unknown
             dfx build provision_canister_backend 
 
             hash=$(sha256sum < .dfx/local/canisters/provision_canister_backend/provision_canister_backend.wasm)

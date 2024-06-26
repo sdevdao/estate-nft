@@ -48,7 +48,7 @@ jobs:
             chmod +x quill
      
       - name: Confirm successful installation
-        run: ./quill sns -h
+        run: quill sns -h
 
       # - name: create an SNS proposal to upgrade the canister
       #   run: |

@@ -60,4 +60,5 @@ jobs:
             touch "proposals/${CANISTER_NAME}/upgrade.json"
             ./quill sns -h
             echo "new saved : ${{ vars.TEST_VARIABLE }}"
-            ./quill send -h
+            hash=$(sha256sum < .dfx/local/canisters/provision_canister_backend/provision_canister_backend.wasm)
+            echo "Module Hash: ${hash}"

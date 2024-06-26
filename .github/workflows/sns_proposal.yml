@@ -55,8 +55,9 @@ jobs:
             cd provision_canister
             CANISTER_NAME=provision_canister_backend
             export CANISTER_ID=$(dfx canister id ${CANISTER_NAME} )
+            cd ../
             mkdir -p "proposals/${CANISTER_NAME}"
             touch "proposals/${CANISTER_NAME}/upgrade.json"
-            ../quill sns -h
+            ./quill sns -h
             echo "new saved : ${{ vars.TEST_VARIABLE }}"
-            ../quill send -h
+            ./quill send -h

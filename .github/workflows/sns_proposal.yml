@@ -58,9 +58,9 @@ jobs:
             mkdir -p "proposals/${CANISTER_NAME}"
             touch "proposals/${CANISTER_NAME}/upgrade.json"
             ../quill sns -h
-            echo "new saved : ${TEST_VARIABLE}"
-            ../quill sns \
-                --pem-file actions_identity.pem \
+            echo "new saved : ${env.TEST_VARIABLE}"
+            # ../quill sns \
+            #     --pem-file actions_identity.pem \
             #     make-upgrade-canister-proposal \
             #     --title "Upgrade ${CANISTER_NAME} Canisters" \
             #     --summary "Upgrade ${CANISTER_NAME}" \

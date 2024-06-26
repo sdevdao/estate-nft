@@ -59,14 +59,4 @@ jobs:
             touch "proposals/${CANISTER_NAME}/upgrade.json"
             ../quill sns -h
             echo "new saved : ${{ vars.TEST_VARIABLE }}"
-            # ../quill sns \
-            #     --pem-file actions_identity.pem \
-            #     make-upgrade-canister-proposal \
-            #     --title "Upgrade ${CANISTER_NAME} Canisters" \
-            #     --summary "Upgrade ${CANISTER_NAME}" \
-            #     --url '' \
-            #     --target-canister-id $CANISTER_ID \
-            #     --wasm-path .dfx/ic/canisters/${CANISTER_NAME}/${CANISTER_NAME}.wasm \
-            #     ${{ secrets.TEST_IDENTITY_PRIVATE_KEY }} > "proposals/${CANISTER_NAME}/upgrade.json"
-            # ../quill send proposals/${CANISTER_NAME}/upgrade.json --yes
-
+            ../quill send -h
